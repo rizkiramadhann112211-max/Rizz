@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>☠️ RIZZ OTP - DARK EDITION</title>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+    <style>
+        /* --- RESET & BASE --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #0a0000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Courier New', monospace;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* --- BACKGROUND GELAP DENGAN EFEK STATIK --- */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(80, 0, 0, 0.4) 0%, transparent 70%),
+                radial-gradient(circle at 80% 50%, rgba(80, 0, 0, 0.2) 0%, transparent 70%),
+                #0a0000;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* --- EFEK STATIK TV TUA (NOISE) --- */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJmIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjc0IiBudW1PY3RhdmVzPSI0IiBzdGl0Y2hUaWxlcz0ic3RpdGNoIi8+PC9maWx0ZXI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsdGVyPSJ1cmwoI2YpIiBvcGFjaXR5PSIwLjA0Ii8+PC9zdmc+');
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* --- CONTAINER UTAMA (BERDARAH) --- */
+        .container {
+            position: relative;
+            z-index: 2;
+            max-width: 580px;
+            width: 100%;
+            background: rgba(10, 0, 0, 0.85);
+            backdrop-filter: blur(6px);
+            padding: 30px 30px 35px;
+            border-radius: 20px;
+            border: 1px solid rgba(139, 0, 0, 0.6);
+            box-shadow: 
+                0 0 60px rgba(139, 0, 0, 0.2),
+                inset 0 0 60px rgba(139, 0, 0, 0.05);
+            animation: pulseBorder 2s infinite alternate;
+        }
+
+        @keyframes pulseBorder {
+            0% { box-shadow: 0 0 40px rgba(180, 0, 0, 0.15); border-color: rgba(139, 0, 0, 0.5); }
+            100% { box-shadow: 0 0 80px rgba(255, 0, 0, 0.25); border-color: rgba(255, 0, 0, 0.8); }
+        }
+
+        /* --- VIDEO BANNER (DI ATAS) --- */
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            border-radius: 14px;
+            overflow: hidden;
+            margin-bottom: 25px;
+            border: 1px solid #4a0000;
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.2);
+            background: #000;
+            aspect-ratio: 16 / 7;
+        }
+
+        .video-wrapper video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* --- OVERLAY GELAP DI ATAS VIDEO (BIAR TEKS MUDAH DIBACA) --- */
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(10,0,0,0.8));
+            pointer-events: none;
+        }
+
+        /* --- JUDUL SERAM DI ATAS VIDEO --- */
+        .video-title {
+            position: absolute;
+            bottom: 15px;
+            left: 20px;
+            color: #ff2a2a;
+            font-family: 'Creepster', cursive;
+            font-size: 28px;
+            letter-spacing: 4px;
+            text-shadow: 
+                0 0 20px #ff0000,
+                0 0 40px #880000,
+                0 0 80px #440000;
+            z-index: 3;
+            opacity: 0.9;
+            animation: flickerText 3s infinite;
+        }
+
+        @keyframes flickerText {
+            0%, 100% { opacity: 1; }
+            2% { opacity: 0.4; }
+            4% { opacity: 1; }
+            6% { opacity: 0.6; }
+            8% { opacity: 1; }
+            50% { opacity: 1; }
+            52% { opacity: 0.3; }
+            54% { opacity: 1; }
+        }
+
+        .video-title small {
+            display: block;
+            font-family: 'Courier New', monospace;
+            font-size: 11px;
+            color: #883333;
+            letter-spacing: 6px;
+            text-shadow: 0 0 10px #440000;
+        }
+
+        /* --- FORM GROUP (GAYA DARK & BLOODY) --- */
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            color: #883333;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 6px;
+            font-weight: bold;
+            text-shadow: 0 0 10px #440000;
+        }
+
+        input {
+            width: 100%;
+            padding: 16px 20px;
+            background: rgba(20, 0, 0, 0.8);
+            border: 1px solid #3a0a0a;
+            border-radius: 10px;
+            color: #cc6666;
+            font-size: 16px;
+            font-family: 'Courier New', monospace;
+            transition: all 0.3s ease;
+            outline: none;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8);
+        }
+
+        input:focus {
+            border-color: #cc0000;
+            box-shadow: 0 0 25px rgba(204, 0, 0, 0.15), inset 0 0 25px rgba(204, 0, 0, 0.05);
+            color: #ff8888;
+        }
+
+        input::placeholder {
+            color: #441111;
+            font-style: italic;
+        }
+
+        /* --- TOMBOL EKSEKUSI (BERDARAH) --- */
+        .btn-execute {
+            width: 100%;
+            padding: 18px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #4a0000, #8a0000, #4a0000);
+            background-size: 200% 200%;
+            animation: bloodFlow 4s infinite alternate;
+            color: #ffaaaa;
+            font-size: 20px;
+            font-weight: 900;
+            font-family: 'Creepster', cursive;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 30px rgba(139, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            text-shadow: 0 0 15px #440000;
+        }
+
+        @keyframes bloodFlow {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        .btn-execute:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 60px rgba(204, 0, 0, 0.5);
+            color: #ffffff;
+        }
+
+        .btn-execute:active {
+            transform: scale(0.95);
+        }
+
+        /* --- EFEK TETESAN DARAH DI SUDUT TOMBOL (PSEUDO) --- */
+        .btn-execute::before {
+            content: '💀';
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 22px;
+            opacity: 0.4;
+        }
+
+        /* --- NOTIFIKASI KECIL (PENGGANTI LOG OUTPUT) --- */
+        .notification {
+            margin-top: 20px;
+            padding: 14px 18px;
+            border-radius: 10px;
+            background: rgba(20, 0, 0, 0.9);
+            border-left: 4px solid #cc0000;
+            color: #cc7777;
+            font-size: 13px;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+            word-break: break-word;
+            box-shadow: inset 0 0 30px rgba(0,0,0,0.5);
+            display: none; /* Sembunyi secara default */
+            min-height: 20px;
+            line-height: 1.5;
+        }
+
+        .notification.show {
+            display: block;
+            animation: fadeInNotif 0.5s ease;
+        }
+
+        .notification.error {
+            border-left-color: #ff0044;
+            color: #ff4466;
+        }
+
+        @keyframes fadeInNotif {
+            0% { opacity: 0; transform: translateY(-10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- FOOTER SERAM --- */
+        .footer {
+            margin-top: 25px;
+            text-align: center;
+            color: #331111;
+            font-size: 11px;
+            letter-spacing: 2px;
+            border-top: 1px solid rgba(80, 0, 0, 0.3);
+            padding-top: 18px;
+        }
+
+        .footer span {
+            color: #882222;
+            text-shadow: 0 0 15px #440000;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 480px) {
+            .container { padding: 18px 15px; }
+            .video-title { font-size: 20px; bottom: 10px; left: 12px; }
+            .video-title small { font-size: 9px; }
+            .btn-execute { font-size: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- VIDEO BANNER -->
+    <div class="video-wrapper">
+        <video autoplay muted loop playsinline>
+            <source src="https://files.catbox.moe/ooscm2.mp4" type="video/mp4">
+            <p>Browser tidak mendukung video.</p>
+        </video>
+        <div class="video-overlay"></div>
+        <div class="video-title">
+            ☠️ RIZZ OTP ☠️
+            <small>◇ DARK EDITION v4.0 ◇</small>
+        </div>
+    </div>
+
+    <!-- FORM SPAM -->
+    <form method="POST">
+        <div class="form-group">
+            <label>📱 Nomor Target</label>
+            <input type="text" name="target" placeholder="62812xxxxxxx (tanpa '+')" required>
+        </div>
+        <div class="form-group">
+            <label>⚡ Thread (1-10)</label>
+            <input type="number" name="threads" value="5" min="1" max="10">
+        </div>
+        <button type="submit" class="btn-execute">💀 Eksekusi Spam 💀</button>
+    </form>
+
+    <!-- NOTIFIKASI KECIL (HANYA MUNCUL JIKA ADA ERROR/OUTPUT) -->
+    <div class="notification {% if error or output %}show{% endif %} {% if error %}error{% endif %}">
+        {% if error %}
+            ❌ {{ error }}
+        {% elif output %}
+            {{ output }}
+        {% else %}
+            <!-- Kosong, tetap tersembunyi -->
+        {% endif %}
+    </div>
+
+    <div class="footer">
+        ⚰️ <span>R I Z Z   O T P</span> ⚰️ <br>
+        Dikelola oleh kegelapan atas kehendak Yang Mulia
+    </div>
+</div>
+
+</body>
+  </html>
