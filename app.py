@@ -22,5 +22,8 @@ def index():
         return render_template('index.html', output=output)
     return render_template('index.html')
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=False)
+# ==========================================
+# BARIS INI PENTING UNTUK VERCEL:
+# Ekspor app sebagai variabel global agar Vercel bisa membaca
+# ==========================================
+app = app
